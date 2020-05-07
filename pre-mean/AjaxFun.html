@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .wrapper{
+        background-color: rosybrown;
+    }
+    .in{
+    text-align: center;
+    }
+    .box{
+        width: 250px;
+        min-height: 250px;
+        margin:30px 60px;
+        border-radius: 5px;
+        background-color:white;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        padding:30px 10px;
+        
+    }
+    </style>
+</head>
+<body>
+    <div><h1>Getting Started with fetch API</h1>
+    <button id= "forfetch">fetch</button></div>
+    <!-- <div id='response'></div> -->
+    <div class="wrapper">
+        <div class='in'>
+            <div class='box'>1</div>
+            <div class='box'>2</div>
+            <div class='box'>3</div> 
+        </div>
+        <div class='in'>
+            <div class='box'>1</div>
+            <div class='box'>2</div>
+            <div class='box'>3</div> 
+        </div>
+        <div class='in'>
+            <div class='box'>1</div>
+            <div class='box'>2</div>
+            <div class='box'>3</div> 
+        </div>
+</div>
+<script>
+document.getElementById('forfetch').addEventListener('click',fetchPoke);
+function fetchPoke(){
+fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean')
+    .then(response=>response.json())
+    .then((data)=>{
+    //  console.log(data)
+        var boxes = document.getElementsByClassName("box");
+        let i = 0;
+        for (let res of data.results){
+            // console.log(res.question)
+            boxes[i].innerHTML = '<div>'+res.question+'</div>'+"<br/>"
+            +'<div>'+res.correct_answer+'</div>';
+            i++;
+             }
+         })
+}
+  
+ 
+
+
+    </script>
+</body>
+</html>
