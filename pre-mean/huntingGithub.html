@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <title>Document</title>
+</head>
+<style>
+    .my-center{
+        text-align: center;
+    }
+    .myName{
+        margin:5px;
+        text-align: center;
+    }
+</style>
+<body>
+    <article class="br2 ba light-purple b--purple-10 mv4 w-100 w-50-m w-25-l mw5 center">
+        <div class='my-center'>
+            <a class="f4 link dim ph3 pv2 mb2 dib white bg-light-purple " href="#0">Show Github info</a>
+            <h3 class='dark-pink' id='myName'></h3>
+        </div>
+    </article> 
+    <script>
+        document.getElementsByTagName('a')[0].addEventListener('click',theFetch);
+        function theFetch(){
+            fetch('https://api.github.com/users/samirakarimi')
+                .then(data =>data.json())
+                .then ((data) => {
+                    // console.log(data.name)
+                    let theName=document.getElementById('myName');
+                    theName.innerHTML = data.name;
+                }
+
+                )
+        }
+    </script>
+</body>
+</html>
