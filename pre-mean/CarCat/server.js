@@ -6,17 +6,17 @@ app.set('views', __dirname + '/views');
 app.get('/', (req, res) => {
    res.send("Hello Express");
 });
-app.get('/cars.html', (req, res) => {
-    res.send("cars.html");
+app.get('/car', (req, res) => {
+    res.render("car");
  });
- app.get('/cats.html',(req,res)=>{
-     res.send('cats.html');
+ app.get('/cat',(req,res)=>{
+     res.render('cat');
  })
- app.get('/form.html',(req,res)=>{
-     res.send('form.html');
+ app.get('/form',(req,res)=>{
+     res.render('form');
  })
 app.get('/home',(req,res)=>{
-    res.render('home')
+    res.render('home');
 })
 
 app.listen(8000, () => console.log("listening on port 8000"));
