@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <article class="br2 ba  b--black mv4 w-100 w-50-m w-25-l mw5 center ">
+        <main class="pa4 black-80">
+            <form class="measure center" action="/survey" method="POST" >
+                <fieldset id="" class="ba b--transparent ph0 mh0">
+                    <div class="mt3">
+                    <label id='one'class="dib fw6 lh-copy f6" for="name">Name</label>
+                    <input class=" pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 dib" type="text" name="name">
+                    </div>
+                    <div class="mt3">
+                        <label class="dib fw6 lh-copy f6" for="location">Dojo Locations:</label>
+                        <!-- <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address"> -->
+                        <select id="" name="location" class=" pa2 input-reset ba bg-transparent  w-100 dib b--black">
+                            <option value="dallas">Dallas TX</option>
+                            <option value="chicago">Chicago IL</option>
+                            <option value="seattle">Seattle WA</option>
+                            <option value="tulsa">Tulsa OK</option>
+                            </select>
+                        </div>
+                        <div class="mt3">
+                        <label class="dib fw6 lh-copy f6" for="language">Favorite Language:</label>
+                        <!-- <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address"> -->
+                        <select id="" name="language" class=" pa2 input-reset ba bg-transparent  w-100 dib b--black">
+                            <option value="jave">Java</option>
+                            <option value="javeScript">JavaScript</option>
+                            <option value="c#">C#</option>
+                            <option value="ruby">Ruby</option>
+                        </select>
+                        </div>
+                        <label class="dib fw6 lh-copy f6" for="">Dojo Locations:</label>
+                        <textarea id="" cols="22" rows="5" class='b--black' name='comments'></textarea>
+                </fieldset>
+                <div class="">
+                    <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in">
+                </div>
+            </form>
+        </main>
+    </article>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <title>Document</title>
+    <style>
+        .container{
+            width: 60%;
+            height: 60%;
+            margin:35px auto;
+            padding: 30px;
+            border: 2px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class='container b--black'>
+    <h2>Submitted Information</h2>
+    <h3>Name: <%= context.name%></h3>
+    <h3>Dojo Location: <%= context.location%></h3>
+    <h3>Favorite Language: <%= context.language%></h3>
+    <h3>Comment: <%= context.comments%></h3>
+    </div> 
+</body>
+</html>
