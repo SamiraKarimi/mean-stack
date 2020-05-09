@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+    <style>
+        .my-center{
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class=' fw7 f2 my-center pv4'>
+        Counter
+    </div >
+    <div class='fw7 f4 my-center '>Number of your visit: <span id='num'><%= context.counter  %></span></div>
+    <div class="my-center pv4">
+    <a class="f6 link dim ph3 pv2 mb2 dib white bg-dark-blue" href="/generate">Generate+2</a>
+    <a class="f6 link dim ph3 pv2 mb2 dib white bg-dark-pink" href="/reset">Reset</a>
+    </div>
+
+    <script>
+        // let gen=document.getElementsByTagName('a')[0];
+        // let reset= document.getElementsByTagName('a')[1];
+        // gen.addEventListener('click',generate);
+        
+        // alert(context);
+        // function generate(){
+        //      var n = document.getElementById("num");
+        // n.innerText = parseInt(n.innerText)+1;
+        //     }
+
+    </script>
+</body>
+</html>
