@@ -14,6 +14,16 @@ let binaryF = (arr,x)=>{
     return false;
 }
 
-
+////binary search with recursion 
+const binaryF = (arr,n,start=0,end=arr.length-1)=>{
+    let mid = Math.floor(((end-start)+end)/2)
+    if ((end-start) == 0) return ` the value doesnt exist :${false}`;
+    if(arr[mid] === n) return `the value exist and index number is ${mid}`;
+    else if(arr[mid]>n)
+      return binaryF(arr,n,start,mid-1)
+    else if(arr[mid]<n)
+      return binaryF(arr,n,mid+1,end)
+}
 
 console.log(binaryF([-6,-4,-1,0,1,2,5],2))
+
