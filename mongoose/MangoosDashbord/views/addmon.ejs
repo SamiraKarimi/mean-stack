@@ -6,11 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h1>All of the Mongoose:</h1>
-    <% for (mong of mongs){  %>
-        <p><%= mong.name%></p>
-        <% } %>
-
+    <form action="/mongoos" method="post">
+        <p>the mongooses:<input type="text" name='mongoose'></p>
+        <p></p>
+        <input type="submit" value="get mongoose">
+        </form>
 </body>
 </html>
