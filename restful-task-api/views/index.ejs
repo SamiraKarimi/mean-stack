@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tasks</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/tasks/new">New Task</a></li>
+    </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title:</th>
+                    <th>Description:</th>
+                    <th>completed:</th>
+                    <th>Created at:</th>
+                    <th>Updated at:</th>
+                </tr>
+            </thead> 
+              <tbody> 
+                 <% for (let task of tasks){ %>
+                <tr>
+                    <td><%= task.title %></td>
+                    <td><%= task.description %></td>
+                    <td><%= task.completed %></td>
+                    <td><%= task.created_at %></td>
+                    <td><%= task.updated_at %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+ </body>
+</html>  
