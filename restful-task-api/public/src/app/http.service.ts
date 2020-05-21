@@ -18,13 +18,16 @@ export class HttpService {
     // return tempObservable;
   }
 
-  newTask() {
-    const tempObservable = this._http.get('/tasks/new');
-    tempObservable.subscribe(data => console.log('went to new page', data));
-    return tempObservable;
-  }
+  // newTask() {
+  //   return  this._http.get('/tasks/new');
+  //   // tempObservable.subscribe(data => console.log('went to new page', data));
+  // }
 
+ updateTask(task: any) {
+    return this._http.post(`/tasks/${task._id}`, task);
+ }
 }
+
 
 
 

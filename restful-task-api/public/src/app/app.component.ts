@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,21 +10,39 @@ export class AppComponent implements OnInit {
   title = 'app';
   color = 'red';
   tasks: any = [];
+  taskToEdit: any = {};
+
 
   // tslint:disable-next-line: variable-name
   constructor(private _httpService: HttpService) {
-    const observable =  this._httpService.getTasks();
-    observable.subscribe(data => {
-                        console.log('we are in the app', data);
-                        this.tasks = data;
-                      });
   }
 
 ngOnInit() {
-  console.log('we are live');
+  this.getTaskFromService();
 }
 getTaskFromService() {
- console.log('heyyy');
+ console.log('I should call the function inside ngOnInit');
+ this._httpService.getTasks()
+                  .subscribe(data => {
+                                    console.log('we are in the app', data);
+                                    this.tasks = data;
+                                  });
+}
+
+updateTaskFromService() {
+  this._httpService.updateTask( this.taskToEdit)
+                   .subscribe(data => {
+                     for (let task of this.tasks) {
+                       // @ts-ignore
+                        if (data._id == task._id) {
+                          task = data;
+                        }
+                     }
+                   });
 }
 
 }
+
+
+
+
