@@ -13,9 +13,6 @@ export class HttpService {
   getTasks() {
     // our http response is an Observable, store it in a variable
     return this._http.get('/tasks');
-    // subscribe to the Observable and provide the code we would like to do with our data from the response
-    // tempObservable.subscribe(data => console.log('Got our tasks in httpservice!', data));
-    // return tempObservable;
   }
 
   // newTask() {
@@ -26,7 +23,13 @@ export class HttpService {
  updateTask(task: any) {
     return this._http.post(`/tasks/${task._id}`, task);
  }
+ getTask(id: any) {
+  return this._http.get(`/task/${id}`);
+  // return this._http.get(`/task/${id}`).subscribe(data => console.log('you got one data', data));
 }
+}
+
+
 
 
 

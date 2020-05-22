@@ -7,10 +7,10 @@ import { HttpService } from './http.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
-  color = 'red';
+  allTheTask = 'All the tasks';
   tasks: any = [];
   taskToEdit: any = {};
+  Detailstask: any ;
 
 
   // tslint:disable-next-line: variable-name
@@ -18,10 +18,10 @@ export class AppComponent implements OnInit {
   }
 
 ngOnInit() {
-  this.getTaskFromService();
+//   this.getTaskFromService();
 }
 getTaskFromService() {
- console.log('I should call the function inside ngOnInit');
+ console.log('I should call the function inside ngOnInit if');
  this._httpService.getTasks()
                   .subscribe(data => {
                                     console.log('we are in the app', data);
@@ -39,6 +39,12 @@ updateTaskFromService() {
                         }
                      }
                    });
+}
+
+onShowDetail(id) {
+  this._httpService.getTask(id)
+                   .subscribe(mydata => {this.Detailstask = mydata;
+                                       console.log('hi from dubscribe', mydata); } );
 }
 
 }

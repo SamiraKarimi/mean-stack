@@ -53,7 +53,7 @@ const {Task} = require('../models/task')
             //we can use findOne and it  will give us just an object inside the array and it doesnt need to pull out the obj from array any more
             console.log(task[0]);
             let theTask = task[0];
-            res.render('task',{theTask});
+            res.json(theTask);
         })
         .catch(err=>res.json(err))
     },
@@ -61,7 +61,8 @@ const {Task} = require('../models/task')
         console.log(req.params);
         Task.findOne({_id:req.params.id})
             .then(task=> { 
-                res.render('edit',{task})
+                // res.render('edit',{task})
+                res.json(task);
             })
             .catch(err=>res.json(err)) 
     },
