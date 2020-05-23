@@ -35,17 +35,6 @@ getTaskFromService() {
                                   });
 }
 
-// updateTaskFromService() {
-//   this._httpService.updateTask( this.taskToEdit)
-//                    .subscribe(data => {
-//                      for (let task of this.tasks) {
-//                        // @ts-ignore
-//                         if (data._id == task._id) {
-//                           task = data;
-//                         }
-//                      }
-//                    });
-// }
 
 onShowDetail(id) {
   this._httpService.getTask(id)
