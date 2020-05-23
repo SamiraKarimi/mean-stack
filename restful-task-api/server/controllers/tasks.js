@@ -12,7 +12,7 @@ const {Task} = require('../models/task')
     }, 
 
     new: (req,res)=>{
-        res.render('new');
+        // res.render('new');
     },
     update: (req,res)=>{
         Task.findOne({_id:req.params.id})
@@ -20,10 +20,8 @@ const {Task} = require('../models/task')
         task.title= req.body.title;
         task.description= req.body.description;
         task.completed= req.body.complete;
-        task.created_at= req.body.created_at;
-        task.updated_at= req.body.updated_at;
         task.save()
-        .then(updatedTask =>res.redirect('/task/'+updatedTask._id) )
+        .then(updatedTask =>res.json(updatedTask) )
         })
     },
     create: (req,res)=>{
@@ -33,8 +31,6 @@ const {Task} = require('../models/task')
         task.title= req.body.title;
         task.description= req.body.description;
         task.completed= req.body.complete;
-        task.created_at= req.body.created_at;
-        task.updated_at= req.body.updated_at;
         task.save()
         .then(newTask => {
             console.log('we created,',newTask)
@@ -42,7 +38,8 @@ const {Task} = require('../models/task')
         })
         .catch(err => {
             console.log('error saving user:',err)
-            res.render('index')
+            // res.render('index')
+            res.json(err)
         })
     },
     taskById: (req,res)=>{
@@ -68,8 +65,12 @@ const {Task} = require('../models/task')
     },
     delete: (req,res)=>{
         Task.remove({_id:req.params.id})
-        .then(()=>res.redirect('/'))
+        .then(
+            // ()=>res.redirect('/')
+            task => res.json(task)
+            )
         .catch(err=>res.json(err))
+        
     }
 
 }
