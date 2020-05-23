@@ -9,6 +9,7 @@ import { HttpService } from './http.service';
 })
 export class AppComponent implements OnInit {
   allTheTask = 'All the tasks';
+  title = 'nested component';
   tasks: any = [];
   taskToEdit: any = {};
   Detailstask: any ;
@@ -30,11 +31,10 @@ getTaskFromService() {
  console.log('I should call the function inside ngOnInit if i wanted to load after constructor');
  this._httpService.getTasks()
                   .subscribe(data => {
-                                    console.log('we are in the app', data);
+                                    console.log('all the task', data);
                                     this.tasks = data;
                                   });
 }
-
 
 onShowDetail(id) {
   this._httpService.getTask(id)
@@ -64,7 +64,7 @@ onEdit(id: any) {
 }
 onUpdate() {
   this._httpService.editTask( this.taskToEdit)
-                   .subscribe(data => {console.log(`hi from updata ${data}`)});
+                   .subscribe(data => {console.log(`hi from updata ${data}`); });
 
 }
 

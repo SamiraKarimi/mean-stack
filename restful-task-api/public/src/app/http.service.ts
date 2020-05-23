@@ -12,6 +12,7 @@ export class HttpService {
 
   getTasks() {
     // our http response is an Observable, store it in a variable
+    // console.log(this._http.get('/tasks'));
     return this._http.get('/tasks');
   }
 
