@@ -1,0 +1,14 @@
+<p>add works!</p>
+<a [routerLink]="['']">Home</a>
+<h3>Add a new author:</h3>
+<form (submit)='onSubmit()'>
+  <!-- use the json pipe to see how newTask changes in real time -->
+  <input type="text" name="name" [(ngModel)]="newAuthor.name" />
+  <input type="submit" value="An author" />
+  <!-- <button [routerLink]="['']">Cancel</button> -->
+  <!-- or we can use : -->
+  <button (click)= 'goHome()'>Go Home</button>
+</form>
+
+<!-- <router-outlet></router-outlet> -->
+<!-- this is just an empty container that the child component will go inside of it based on routing -->

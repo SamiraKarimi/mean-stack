@@ -1,8 +1,14 @@
+// const express = require("express");
+// const app = express();
+// app.get('/', (request, response) => {
+//    response.send("Hello Express");
+// });
 const express = require("express")
 const mongoose = require('mongoose');
 
 const app = express();
-mongoose.connect('mongodb://localhost/restful-task-api',{ useNewUrlParser: true });
+// Connect Mongoose to MongoDB
+mongoose.connect('mongodb://localhost/authors-with-angular',{ useNewUrlParser: true });
 
 //setting
 

@@ -1,0 +1,9 @@
+<p>home works!</p>
+<!-- <a [routerLink]="['/add']">add an author</a> -->
+<a [routerLink]="['/add']">add an author</a>
+<h2>we have quotes by:</h2>
+
+<p *ngFor="let author of authors">{{author.name}}<button [routerLink]="['/edit/'+author._id]">edit</button>
+  <button (click) = 'onDelete(author._id)'>Delete</button>
+</p>
+

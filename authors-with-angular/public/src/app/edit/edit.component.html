@@ -1,0 +1,8 @@
+<p>edit works!</p>
+<a [routerLink]="['']">Home</a>
+<p>Edit the author</p>
+
+<form (submit)='onUpdate()'>
+ <label for="">Name<input type="text" name='name' [(ngModel)] = 'authorToEdit.name'></label><br>
+ <button>Update</button>
+</form>

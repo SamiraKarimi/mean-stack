@@ -1,0 +1,24 @@
+for create service
+1.ng g s http
+//.../app/app.module.ts
+---import { HttpService } from './http.service';
+---@NgModule({
+   ...
+   providers: [HttpService],
+   ...
+})
+import { HttpClientModule } from '@angular/common/http';
+@NgModule({
+   ...
+   imports: [
+      BrowserModule,
+      HttpClientModule
+   ],
+   ...
+})
+===Dependency injection
+.../app/http.service.ts
+import { HttpClient } from '@angular/common/http';
+export class HttpService {
+    constructor(private _http: HttpClient){}
+}
